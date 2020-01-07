@@ -114,7 +114,8 @@ MatrixPlotwDotsConnect <- function(field, lon, lat, crs, resolution = NULL, dthr
   
   # Determine ratio between x and y dimensions
   ratio <- (e@xmax - e@xmin)/(e@ymax - e@ymin)
-  r <- raster(nrows=180, ncols=floor(180*ratio) , ext=extent(spdf)) #MODIFICAR PARA QUE SEA AUTOMATICO
+  npixels <- floor((dim(lon)[1])/2)
+  r <- raster(nrows=npixels, ncols=floor(npixels*ratio) , ext=extent(spdf)) #MODIFICAR PARA QUE SEA AUTOMATICO
   rf <- rasterize(spdf, r, field="z", fun=mean)
   
   rdf <- data.frame(rasterToPoints(rf))    
@@ -134,7 +135,7 @@ MatrixPlotwDotsConnect <- function(field, lon, lat, crs, resolution = NULL, dthr
       
       # Determine ratio between x and y dimensions
       ratio_contours <- (e_contours@xmax - e_contours@xmin)/(e_contours@ymax - e_contours@ymin)
-      r_contours <- raster(nrows=120, ncols=floor(120*ratio_contours) , ext=extent(spdf_contours))
+      r_contours <- raster(nrows=npixels, ncols=floor(npixels*ratio_contours) , ext=extent(spdf_contours))
       rf_contours <- rasterize(spdf_contours, r_contours, field="z", fun=mean)
       rdf_contours <- data.frame(rasterToPoints(rf_contours))    
     } else{
