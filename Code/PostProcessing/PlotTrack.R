@@ -21,8 +21,13 @@ PlotTrack <- function(folder, connect, resolution=NULL, dthreshold=NULL, dtthres
   minlat <- min(lat[,min(dots$y)]) - 1
   maxlat <- max(lat[,max(dots$y)]) + 1
   
+  reflon <-
+  reflat <-
+  
+  crs=paste('+proj=laea +lat_0=',reflat,' +lon_0=',reflon,' +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs',sep='')
+  
   cairo_pdf(filename = paste(folder,'/trackplot.pdf',sep=''), width = 10, height = 8)
-  MatrixPlotwDotsConnect(zeromatrix, lon, lat, xmin = 3.1, xmax = 34.3, ymin = 30.5, ymax = 43,
+  MatrixPlotwDotsConnect(zeromatrix, lon, lat, crs=crs, xmin = 3.1, xmax = 34.3, ymin = 30.5, ymax = 43,
                         dots=dots, dots_symbol = 1, dots_cex=1,
                         dots_color = 'blue', dots_connect = connect, resolution = resolution,
                         dthreshold = dthreshold, dtthreshold = dtthreshold, legend = FALSE)
