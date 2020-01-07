@@ -21,8 +21,11 @@ PlotTrack <- function(folder, connect, resolution=NULL, dthreshold=NULL, dtthres
   minlat <- min(lat[,min(dots$y)]) - 1
   maxlat <- max(lat[,max(dots$y)]) + 1
   
-  reflon <-
-  reflat <-
+  infofile <- paste(getwd(),'/',folder,'/output/outputfile-slp.nc',sep='')
+  fileinfo <- system(paste('ncdump -h ',infofile, '| more',sep=''), wait=FALSE, intern=TRUE)
+  projectioninfo <- fileinfo[grep('projection',fileinfo)]
+  reflon <- as.character(round(as.numeric(strsplit(strsplit(projectioninfo,'stand_lon=')[[1]][2],',')[[1]][1]),3))
+  reflat <- as.character(round(as.numeric(strsplit(strsplit(projectioninfo,'moad_cen_lat=')[[1]][2],',')[[1]][1]),3))
   
   crs=paste('+proj=laea +lat_0=',reflat,' +lon_0=',reflon,' +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs',sep='')
   
