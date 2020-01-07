@@ -1,4 +1,4 @@
-MatrixPlotwDotsConnectF <- function(field, lon, lat, crs, resolution = NULL, dthreshold = NULL, dtthreshold = NULL,
+MatrixPlotwDotsConnect <- function(field, lon, lat, crs, resolution = NULL, dthreshold = NULL, dtthreshold = NULL,
                                    xmin = NULL, xmax = NULL, ymin = NULL, ymax = NULL, contours = NULL,
                                    contours_field = NULL , contours_spacing = NULL, contours_breaks = NULL, 
                                    contours_color = NULL , contours_labels_size = NULL, contours_labels_color = NULL,
