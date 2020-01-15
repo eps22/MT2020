@@ -103,7 +103,7 @@ ParallelMasterTracker <- function(compfolder, Resolution, timestep, ncores=NULL,
     saveRDS(currentlist, file=paste('../',name,'-track.RData',sep=''))
     }
     sink(paste(compfolder,'/findmedicanes.log',sep=''), append=TRUE)
-    cat(paste("Medicanes finding algorithm completed successfully.","\n"))
+    cat(paste("Medicanes tracking algorithm completed successfully.","\n"))
     sink()
   }
   
