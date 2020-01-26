@@ -3,7 +3,7 @@ Authors: Enrique Pravia-Sarabia, Juan Pedro Montávez-Gómez and Juan José Góm
 Release date: January 2020.**
 
 
-# PART I: TRACKING ALGORITHM
+## PART I: TRACKING ALGORITHM
 
 To run the tracking algorithm, you should go to the *Code* folder and type the following command in the console:
 
@@ -37,11 +37,11 @@ Output of this tool is a list object of R -*.RData*- with the found centers.
    doParallel
 
 
-# PART II: TRACK POSTPROCESSING.
+## PART II: TRACK POSTPROCESSING.
 
 There are two postprocessing tools provided in this package, one for producing a plot with the track, and one for obtaining further data on the track parameters.
 
-## Plot of calculated track
+### Plot of calculated track
 
 To plot the calculated track -SEE PART I-, you should go to the *Code* folder and introduce the following command in the console:
 
@@ -50,11 +50,11 @@ To plot the calculated track -SEE PART I-, you should go to the *Code* folder an
 user@machine:dir$ bash plotmedicanestrack.sh PATHTOFOLDER ADJUST COMPLETE CONNECT SLPEXPANDN RESOLUTION DTHRESHOLD DTTHRESHOLD
 ```
 
-**PATHTOFOLDER** must be the path to the folder created by the PART I. Inside that folder, it should be present the *-track.RData file -output of findmedicanes.sh-, along with a folder called 'output' containing the vertically interpolated files -slp, uvmet10 and z- in netcdf format. PATHTOFOLDER is to be introduced with no quotation marks. **ADJUST** should be one of TRUE/FALSE, and determines if the output map extent should be adjusted to the track, or the complete domain should be plotted instead. **COMPLETE** should be one of TRUE/FALSE, and determines if the track should be complemented with the SLP minimum path. **CONNECT** refers to the possibility of connecting track points trough a continuous line. SLPEXPANDN, RESOLUTION, DTHRESHOLD or DTTHRESHOLD should also be introduced as numbers. **SLPEXPANDN** is the number of track points that should be taken to expand the track at its beginning and ending. **RESOLUTION** represents the grid horizontal resolution in kilometers -the same as in the part I-; **DTHRESHOLD** refers to the maximum allowed distance between two track points to be connected -in km-, and a value of DTHRESHOLD below 200 km is highly recommended for physical reasons if timestep is 1 hour, 200km*timestep for other timestep values; **DTTHRESHOLD** is the maximum allowed time interval -in timesteps- between two points to be connected. A value of 1 or 2 is recommended for this last parameter. For example, with a value of 1 only consecutive points in time are connected. RESOLUTION, DTHRESHOLD and DTTHRESHOLD are optional arguments. If not provided, the plot won't have connected track dots, and only sparse points will be shown.   
+**PATHTOFOLDER** must be the path to the folder created by the PART I. Inside that folder, it should be present the track file -output of findmedicanes.sh-, along with a folder called 'output' containing the vertically interpolated files -slp, uvmet10 and z- in netcdf format. PATHTOFOLDER is to be introduced with no quotation marks. **ADJUST** should be one of TRUE/FALSE, and determines if the output map extent should be adjusted to the track, or the complete domain should be plotted instead. **COMPLETE** should be one of TRUE/FALSE, and determines if the track should be complemented with the SLP minimum path. **CONNECT** refers to the possibility of connecting track points trough a continuous line. SLPEXPANDN, RESOLUTION, DTHRESHOLD or DTTHRESHOLD should also be introduced as numbers. **SLPEXPANDN** is the number of track points that should be taken to expand the track at its beginning and ending. **RESOLUTION** represents the grid horizontal resolution in kilometers -the same as in the part I-; **DTHRESHOLD** refers to the maximum allowed distance between two track points to be connected -in km-, and a value of DTHRESHOLD below 200 km is highly recommended for physical reasons if timestep is 1 hour, 200km*timestep for other timestep values; **DTTHRESHOLD** is the maximum allowed time interval -in timesteps- between two points to be connected. A value of 1 or 2 is recommended for this last parameter. For example, with a value of 1 only consecutive points in time are connected. RESOLUTION, DTHRESHOLD and DTTHRESHOLD are optional arguments. If not provided, the plot won't have connected track dots, and only sparse points will be shown.   
 
 Output of this tool is a pdf called trackplot.pdf, located inside the provided folder. 
 
-## Obtain further data along calculated track
+### Obtain further data along calculated track
 
 Go to the *Code* folder and type in the console the following command:
 
@@ -68,7 +68,7 @@ Output of this tool is a csv called trackingdf.csv, located inside the provided 
 
 The 'reduced' TYPE value gives the following track parametersS:
 
-**Date**:                              date and time in the format YY-MM-DD hh:mm:ss
+**Date**:                              date and time in the format YY-MM-DD hh:mm:ss \\
 **Timestep**:                          corresponding timestep to the date in the simulation
 **x**:                                 coordinate of the center position in the longitudinal dimension
 **Lon**:                               longitudinal coordinate of the center position -in degrees-
