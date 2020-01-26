@@ -3,11 +3,13 @@ Authors: Enrique Pravia-Sarabia, Juan Pedro Montávez-Gómez and Juan José Góm
 Release date: January 2020.
 
 
-#PART I: TRACKING ALGORITHM
+# PART I: TRACKING ALGORITHM
 
 To run the tracking algorithm, you should go to the \textit{Code} folder and type the following command in the console:
 
-$ bash findmedicanes.sh PATHTOWRFOUTPUTNCFILE RESOLUTION TIMESTEP NCORES 
+```console
+user@machine:dir$ bash findmedicanes.sh PATHTOWRFOUTPUTNCFILE RESOLUTION TIMESTEP NCORES 
+```
 
 PATHTOWRFOUTPUTNCFILE represents the path to a WRF output nc file which contains all the fields, timesteps and vertical levels. Resolution refers to the horizontal grid resolution -in km-, and timestep to the temporal resolution -in hours-. Path to file is to be introduced with no quotation marks. Either resolution or timestep, which should both be numbers. NCORES is the number of cores to be used in the parallelized calculation of the medicanes track. It is an optional arguments that defaults to the machine total number of cores if argument is not passed, saving one core to prevent overloading. 
 
