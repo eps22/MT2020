@@ -1,0 +1,3 @@
+*.sh linguist-language=bash
+*.py linguist-language=python
+*.R  linguist-language=R
