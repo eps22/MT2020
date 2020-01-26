@@ -168,7 +168,7 @@
 
 Additional notes:
 
-- By default, the blending area is 10 grid points in the borders (product is set to zero for the points inside the blending area in ParallelFindCenter.R).
+- By default, the blending area is 10 grid points in the borders (product is set to zero for the points inside the blending area in ParallelFindCenters.R).
   With an increase in the resolution a broader blending area is recommended. 
   
-- The number of points used to calculate the zero vorticity radius is 30. Thus, the maximum structure radius allowed is 30*resolution -km- when calculating ZGradSymm and Hart parameters. This means that, if there is not a change in the vorticity sign in the first 30 points in any of the four principal directions (up,down,right,left), then it is considered that the point is not inside a closed circulation structure and, hence, cannot be a medicane center. Setting CalculateRadiusThreshold to 'mean' instead of 'zero' is less restrictive, but in those special cases in which the spatial mean of the surface vorticity across the complete domain is high, e.g. for small domains, using 'mean' may lead to inaccurate results.  
+- The number of points used to calculate the zero vorticity radius is 30. Thus, the maximum structure radius allowed is 30*resolution -km- when calculating the zero vorticity radius and Hart parameters. This means that, if there is not a change in the vorticity sign in the first 30 points in any of the 8 directions, then it is considered that the point is not inside a closed circulation structure and, hence, cannot be a medicane center. Setting CalculateZeroVorticityRadiusThreshold to 'mean' instead of 'zero' is less restrictive, but in those special cases in which the spatial mean of the surface vorticity across the complete domain is high, e.g. for small domains, using 'mean' may lead to inaccurate results.  
