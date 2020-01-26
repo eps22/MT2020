@@ -3,7 +3,7 @@ Authors: Enrique Pravia-Sarabia, Juan Pedro Montávez-Gómez and Juan José Góm
 Release date: January 2020.**
 
 
-## PART I: TRACKING ALGORITHM
+### PART I: TRACKING ALGORITHM
 
 To run the tracking algorithm, you should go to the *Code* folder and type the following command in the console:
 
@@ -37,11 +37,11 @@ Output of this tool is a list object of R -*.RData*- with the found centers.
    doParallel
 
 
-## PART II: TRACK POSTPROCESSING.
+### PART II: TRACK POSTPROCESSING.
 
 There are two postprocessing tools provided in this package, one for producing a plot with the track, and one for obtaining further data on the track parameters.
 
-### Plot of calculated track
+#### Plot of calculated track
 
 To plot the calculated track -SEE PART I-, you should go to the *Code* folder and introduce the following command in the console:
 
@@ -54,7 +54,7 @@ user@machine:dir$ bash plotmedicanestrack.sh PATHTOFOLDER ADJUST COMPLETE CONNEC
 
 Output of this tool is a pdf called trackplot.pdf, located inside the provided folder. 
 
-### Obtain further data along calculated track
+#### Obtain further data along calculated track
 
 Go to the *Code* folder and type in the console the following command:
 
@@ -68,7 +68,7 @@ Output of this tool is a csv called trackingdf.csv, located inside the provided 
 
 The 'reduced' TYPE value gives the following track parametersS:
 
-**Date**:                              date and time in the format YY-MM-DD hh:mm:ss \\
+**Date**:                              date and time in the format YY-MM-DD hh:mm:ss <br>
 **Timestep**:                          corresponding timestep to the date in the simulation
 **x**:                                 coordinate of the center position in the longitudinal dimension
 **Lon**:                               longitudinal coordinate of the center position -in degrees-
