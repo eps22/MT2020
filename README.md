@@ -69,37 +69,37 @@ Output of this tool is a csv called trackingdf.csv, located inside the provided 
 The 'reduced' TYPE value gives the following track parametersS:
 
 **Date**:                              date and time in the format YY-MM-DD hh:mm:ss <br>
-**Timestep**:                          corresponding timestep to the date in the simulation
-**x**:                                 coordinate of the center position in the longitudinal dimension
-**Lon**:                               longitudinal coordinate of the center position -in degrees-
-**y**:                                 coordinate of the center position in the latitudinal dimension
-**Lat**:                               latitudinal coordinate of the center position -in degrees-
-**center.slp.hPa**:                    SLP value at the center position -in hPa-
+**Timestep**:                          corresponding timestep to the date in the simulation <br>
+**x**:                                 coordinate of the center position in the longitudinal dimension <br>
+**Lon**:                               longitudinal coordinate of the center position -in degrees- <br>
+**y**:                                 coordinate of the center position in the latitudinal dimension <br>
+**Lat**:                               latitudinal coordinate of the center position -in degrees- <br>
+**center.slp.hPa**:                    SLP value at the center position -in hPa- <br>
 
 The 'complete' TYPE value gives the following track parameters:
 
-**Date**:                              date and time in the format YY-MM-DD hh:mm:ss
-**Timestep**:                          corresponding timestep to the date in the simulation
-**x**:                                 coordinate of the center position in the longitudinal dimension
-**Lon**:                               longitudinal coordinate of the center position -in degrees-
-**y**:                                 coordinate of the center position in the latitudinal dimension
-**Lat**:                               latitudinal coordinate of the center position -in degrees-
-**center.slp.hPa**:                    SLP value at the center position -in hPa-
-**inner.radius.km**:                   Medicane inner radius calculated as the distance from the center to the eyewall -max wind surface-
-**outer.radius.km**:                   Medicane outer radius calculated as the mean distance from the center to the zero vorticity closed line points
-**B.m**:                               B Hart thermal symmetry parameter value at the center position -in meters-
-**LTW**:                               LTW Hart lower thermal wind parameter value at the center position
-**UTW**:                               UTW Hart upper thermal wind parameter value at the center position
-**max.inZVradius.wind.kmh**:           maximum wind speed value inside a circle with the zero vorticity radius around the center position -in km.h{-1}-
-**center.wind.kmh**:                   wind speed value at the center position -in km.h{-1}-
-**min.inZVradius.wind.kmh**:           minimum wind speed value inside a circle with the zero vorticity radius around the center position -in km.h{-1}-
-**min.inZVradius.slp.x.position**:     x position of the minimum SLP value inside a circle with the zero vorticity radius around the center position -in km.h{-1}-
-**min.inZVradius.slp.Lon**:            longitude of the minimum SLP value inside a circle with the zero vorticity radius around the center position -in km.h{-1}-
-**min.inZVradius.slp.y.position**:     y position of the minimum SLP value inside a circle with the zero vorticity radius around the center position -in km.h{-1}-
-**min.inZVradius.slp.Lat**:            latitude of the minimum SLP value inside a circle with the zero vorticity radius around the center position -in km.h{-1}-
-**min.inZVradius.slp.hPa**:            minimum SLP value inside a circle with the zero vorticity radius around the center position -in hPa-
-**minSLP.center.distance.km**:         distance between the min.inZVradius.slp.hPa position and the center position -in km-
-**Saffir.Simpson.scale.category**:     storm category according to the Saffir-Simpson scale using the max.100km.wind.kmh wind speed 
+**Date**:                              date and time in the format YY-MM-DD hh:mm:ss <br>
+**Timestep**:                          corresponding timestep to the date in the simulation <br>
+**x**:                                 coordinate of the center position in the longitudinal dimension <br>
+**Lon**:                               longitudinal coordinate of the center position -in degrees- <br>
+**y**:                                 coordinate of the center position in the latitudinal dimension <br>
+**Lat**:                               latitudinal coordinate of the center position -in degrees- <br>
+**center.slp.hPa**:                    SLP value at the center position -in hPa- <br>
+**inner.radius.km**:                   Medicane inner radius calculated as the distance from the center to the eyewall -max wind surface- <br>
+**outer.radius.km**:                   Medicane outer radius calculated as the mean distance from the center to the zero vorticity closed line points <br>
+**B.m**:                               B Hart thermal symmetry parameter value at the center position -in meters- <br>
+**LTW**:                               LTW Hart lower thermal wind parameter value at the center position <br>
+**UTW**:                               UTW Hart upper thermal wind parameter value at the center position <br>
+**max.inZVradius.wind.kmh**:           maximum wind speed value inside a circle with the zero vorticity radius around the center position -in km.h{-1}- <br>
+**center.wind.kmh**:                   wind speed value at the center position -in km.h{-1}- <br>
+**min.inZVradius.wind.kmh**:           minimum wind speed value inside a circle with the zero vorticity radius around the center position -in km.h{-1}- <br>
+**min.inZVradius.slp.x.position**:     x position of the minimum SLP value inside a circle with the zero vorticity radius around the center position -in km.h{-1}- <br>
+**min.inZVradius.slp.Lon**:            longitude of the minimum SLP value inside a circle with the zero vorticity radius around the center position -in km.h{-1}- <br>
+**min.inZVradius.slp.y.position**:     y position of the minimum SLP value inside a circle with the zero vorticity radius around the center position -in km.h{-1}- <br>
+**min.inZVradius.slp.Lat**:            latitude of the minimum SLP value inside a circle with the zero vorticity radius around the center position -in km.h{-1}- <br>
+**min.inZVradius.slp.hPa**:            minimum SLP value inside a circle with the zero vorticity radius around the center position -in hPa- <br>
+**minSLP.center.distance.km**:         distance between the min.inZVradius.slp.hPa position and the center position -in km- <br>
+**Saffir.Simpson.scale.category**:     storm category according to the Saffir-Simpson scale using the max.100km.wind.kmh wind speed
 
 
 
