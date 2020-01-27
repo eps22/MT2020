@@ -1,0 +1,9 @@
+plotfield.sh is a bash script prepared to make use of the MatrixPlot R function. It has been developed to allow an easy plotting of the WRF output fields contained in an ncdf file.
+
+Although MatrixPlot.R allows the plotting of contour lines and arrows for vectorial fields, the bash script plotfield.sh does not support these features yet.
+
+An example of how the bash script can be used is: 
+
+q@wave:~$ bash plotfield.sh 'file=/Datos/FindMedicanes-V13/Rolf/Rolf-spnud-2011-11-05_00to2011-11-10_00/output/outputfile-slp.nc field=slp vlevel=3 timestep=40 xmin=-1 xmax=14 ymin=36 ymax=42 xticksint=4 yticksint=4 colorpalette=Spectral barlims=c(990,1010) barbreaks=seq(990,1010,by=5) barlabs=seq(990,1010,by=5) outname=slp-vlevel3-t40.pdf'
+
+This example includes all the options supported so far. Only the flags 'file', 'field', 'timestep' and 'vlevel' -in case of 4D fields- are mandatory in the input arguments string. The others will take their default values if they are not specified. 
