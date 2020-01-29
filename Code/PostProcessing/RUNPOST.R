@@ -12,6 +12,13 @@ if(length(args)==6){ #resolution and dthreshold are not given, and then connecti
   PlotTrack(folder=folder, connect=connect, adjust=adjust, complete = complete)
 }
 
+if(length(args)==9){ #resolution and dthreshold are given, and then connection should be made
+  resolution <- args[6]
+  dthreshold <- args[7]
+  dtthreshold <- args[8]
+  PlotTrack(folder=folder, connect=connect, adjust=adjust, complete = complete, resolution=as.numeric(resolution), dthreshold=as.numeric(dthreshold), dtthreshold=as.numeric(dtthreshold))
+}
+
 if(length(args)==10){ #resolution and dthreshold are given, and then connection should be made
   SLPexpandN <- args[6]
   resolution <- args[7]
