@@ -30,6 +30,10 @@ PlotTrack <- function(folder, adjust, complete, connect, SLPexpandN=NULL,  resol
     dtthreshold2 <- dtthreshold
   } else{
     dots2 <- NULL
+    ds2 <- 3
+    dcol2 <- 'red'
+    dthreshold2 <- dthreshold
+    dtthreshold2 <- dtthreshold
   }
 
   if(adjust==TRUE){minlon <- min(lon[min(dots$x),]) - 1} else{minlon <- min(lon)}
