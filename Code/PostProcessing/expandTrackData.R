@@ -5,9 +5,6 @@ expandTrackData <- function(folder, resolution, trackingdf, expandN){ #returns e
   #Read SLP file
   slp <- ncvar_get(nc_open(paste(getwd(),'/',folder,'/output/outputfile-slp.nc',sep='')),'slp')
   
-  #VER LA MANERA DE AISLAR EL TRACK DEL MEDICANE DENTRO DE TODOS LOS PUNTOS PARA SELECCIONAR
-  #LOS N PUNTOS ANTES Y DESPUÉS DE ESE TRACK, NO DE TODOS LOS PUNTOS. POR AHORA LO HAGO FÁCIL.
-  
   initial <- min(dottss0$timestep)
   if((initial-expandN)<1){initial2 <- 1} else{initial2 <- initial-expandN}
   final <- max(dottss0$timestep)
@@ -29,10 +26,6 @@ expandTrackData <- function(folder, resolution, trackingdf, expandN){ #returns e
   
   #Add 400000 to all SLP dots timesteps so that they don't get connected with medicane center dots
   dottss1$timestep <- dottss1$timestep#+400000
-  
-  #Así no, mejor que sea un df separado, y modificar la función MatrixPlotwDotsConnect
-  #para que se puedan introducir dos df diferentes con dos colores de connect diferentes
-  
   
   #dottss2 <- rbind(dottss0,dottss1)
   
