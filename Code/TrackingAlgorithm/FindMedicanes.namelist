@@ -1,0 +1,43 @@
+  
+  
+  InitTime                          = initial         
+  FinalTime                         = final
+  
+  Resolution                        = 27
+  TimestepDt                        = 1
+  LonDimName                        = west_east
+  LonVarName                        = XLONG
+  LatDimName                        = south_north
+  LatVarName                        = XLAT               
+  TimeDimName                       = Time                 
+  PressureVertLevelDimName          = interp_level
+  SLPVarName                        = slp            
+  U10VarName                        = uvmet10                      
+  V10VarName                        = uvmet10                       
+  ZVarName                          = height
+  
+  SmoothingPasses                   = 5
+  SLPThreshold                      = 1005
+  ProductQuantileLowerLimit         = 0.999
+  VorticityThreshold                = 1
+  CalculateZeroVortRadiusThreshold  = zero
+  CalculateZeroVortRadiusNPoints    = 30 
+  IfCheckZeroVortSymm               = TRUE
+  ZeroVortRadiusMaxAllowedAsymm     = 300
+  ZeroVortRadiusMinSymmDirs         = 6
+  ZeroVortRadiusUpperLimit          = 1000
+  ZeroVortRadiusLowerLimit          = 80           
+  SLPminsClustersMinIBdistance      = 300
+  MaxNumberOfDifferentClusters      = 50
+  MinPointsNumberInCluster          = 5
+  IfCheckHartParamsConditions       = TRUE              
+  HartConditionsTocheck             = 1,2,3,4             
+  Blowerpressurelevel               = 900                  
+  Bupperpressurelevel               = 600                 
+  Bmultiplemeasure                  = max   
+  Bdirections                       = 4                            
+  Bthreshold                        = 20                           
+  LTWlowerpressurelevel             = 900        
+  LTWupperpressurelevel             = 600              
+  UTWlowerpressurelevel             = 600              
+  UTWupperpressurelevel             = 300               
