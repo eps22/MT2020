@@ -31,6 +31,8 @@ Rscript TrackingAlgorithm/RUN.R $localdir/outfolder ${@:2}
 mv outfolder-track.RData track.RData
 echo "PWD: "$localdir/$'   \n'"INPUTDIR: ""$PASSED" >> outfolder/inputinfo
 mv track.RData outfolder
-mv outfolder "completed$(ls -d completed* | wc -l)"
+abc="completed$(ls -d completed* | wc -l)"
+mv outfolder $abc
+mv $abc/track.RData $abc/$abc-track.RData
 
 
