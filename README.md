@@ -5,7 +5,6 @@ Authors: Enrique Pravia-Sarabia, Juan Pedro Montávez, Juan José Gómez-Navarro
 <br>
 Release date: January 2020.** <br>
 
-
 ### PART I: TRACKING ALGORITHM
 
 To run the tracking algorithm, you should go to the *Code* folder and type the following command in the console:
