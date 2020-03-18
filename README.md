@@ -14,7 +14,7 @@ To run the tracking algorithm, you should go to the *Code* folder and type the f
 user@machine:dir$ bash findmedicanes.sh TRACKINGINPUT NCORES 
 ```
 
-**TRACKINGINPUT** represents the path to a WRF output nc file which contains all the fields, timesteps and vertical levels, or a folder with the requested fields if they have been previously interpolated to pressure fields (see paragraph Requested fields below). Path to file or folder is to be introduced with no quotation marks. **NCORES** is the number of cores to be used in the parallelized calculation of the medicanes track. It is an optional arguments that defaults to the machine total number of cores if argument is not passed, saving one core to prevent overloading. 
+**TRACKINGINPUT** represents the path to a WRF output nc file which contains all the fields, timesteps and vertical levels, or a folder with the requested fields if they have been previously interpolated to pressure fields (see paragraph Requested fields below). Path to file or folder is to be introduced with no quotation marks. If path to WRF output file, it can be relative. If path to folder, an absolute path is mandatory. **NCORES** is the number of cores to be used in the parallelized calculation of the medicanes track. It is an optional arguments that defaults to the machine total number of cores if argument is not passed, saving one core to prevent overloading. 
 
 Algorithm parameters can be changed in the *FindMedicanes.namelist* file inside the TrackingAlgorithm folder. This file must be in that same location when running the findmedicanes bash script. The *FindMedicanes.namelist.README* file contains detailed information about the meaning of each parameter, its possible values and its recommended/default value. 
 
