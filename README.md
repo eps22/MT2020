@@ -1,7 +1,7 @@
 **This is an info file about the medicanes tracking algorithm <br>
 developed in the MAR group of the University of Murcia in 2019. <br>
 <br>
-Authors: Enrique Pravia-Sarabia, Juan Pedro Montávez and Juan José Gómez-Navarro. <br>
+Authors: Enrique Pravia-Sarabia, Juan Pedro Montávez, Juan José Gómez-Navarro and Pedro Jiménez-Guerrero. <br>
 <br>
 Release date: January 2020.** <br>
 
