@@ -21,13 +21,14 @@ Algorithm parameters can be changed in the *FindMedicanes.namelist* file inside 
 #### Requested fields
 In case of executing the algorithm over data different from WRF output, the input provided to the algorithm must be a folder  with four files called 'outputfile-slp.nc', 'outputfile-z.nc', 'outputfile-uvmet10-U.nc' and 'outputfile-uvmet10-V.nc', containing SLP, geopotential height in pressure levels, and 10-m wind U and V components. The SLP can be either in Pa or hPa, but the value of SLP threshold must be set accordingly in the TrackingAlgorithm/FindMedicanes.namelist file. Geopotential height must be in meters, and 10-m winds in km.h{-1}. If pressure levels for the geopotential height are in Pa, remember to change values of pressure levels for the calculation of Hart parameters in the TrackingAlgorithm/FindMedicanes.namelist file. The variables and dimensions names of the netCDF, as well as the spatial and temporal resolutions, need to be accordingly set in the TrackingAlgorithm/FindMedicanes.namelist file. 
 
-Additional notes: The variables and dimensions names of the netCDF are contained in the netCDF metadata. The command ncdump -h of ncdump tool is recommended for this particular issue. In R, the ncdf4::nc_open() command can be useful. It will load the netCDF as a S4 object, with dimensions and variables saved in S4object$dim and S4object$var elements. 
+**Additional notes**: <br>
+The variables and dimensions names of the netCDF are contained in the netCDF metadata. The command ncdump -h of ncdump tool is recommended for this particular issue. In R, the ncdf4::nc_open() command can be useful. It will load the netCDF as a S4 object, with dimensions and variables saved in S4object$dim and S4object$var elements. 
 
 Climate Data Operators, most known as CDO [https://code.mpimet.mpg.de/projects/cdo/embedded/cdo.pdf], are a useful tool for editing a netCDF. It will allow easy and quick modifications of units, spatial and temporal cropping on the netCDF before passing the algorithm. Nevertheless, the metadata of the netCDF is changed by CDO. Thus, if the WRF-python preprocessing is to be used, it is highly recommended to use the NCO [http://nco.sourceforge.net/nco.pdf] operators instead. 
 
 The name given to the folder once the algorithm has terminated its execution is 'completed'. If another 'completed' folders are present in the running directory, then a number will be added to avoid overwriting. Output of this tool is a list object of R -*.RData*- with the found centers, which will be located inside the 'completedX' folder. 
 
-System requirementes:
+#### System requirements
 
 **Python version**: Python 3.6.8 (a correct working of pinterpy interpolation with previous python versions is expected but not guaranteed). <br>
 **Python requested libraries**: <br>
