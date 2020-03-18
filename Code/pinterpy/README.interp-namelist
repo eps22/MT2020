@@ -18,7 +18,7 @@ A string with the units for the field requested, or an array of units if the ext
 --> interpolate=True 
 One of [True/False] if the calculation of a single field is requested, or a boolean array if the extraction of multiple fields is desired. If this namelist option is omitted, or less boolean options than fields are specified, by default False will be assumed for all the fields. In the case that multiple fields are requested, but a single option is specified, this will be the used option for all the fields.   
 
---> plevels=[1000.0,900.0,850.0,800.0,775.0,750.0,725.0,700.0,675.0,650.0,625.0,600.0,550.0,500.0,450.0,400.0,350.0,300.0]
+--> plevels=[1000.0,975.0,950.0,925.0,900.0,875.0,850.0,825.0,800.0,775.0,750.0,725.0,700.0,675.0,650.0,625.0,600.0,575.0,550.0,525.0,500.0,475.0,450.0,425.0,400.0,375.0,350.0,325.0,300.0]
 A vector with the pressure levels to interpolate the fields to. If None option is used, the default levels taken are [1000.0, 900.0, 800.0, 700.0, 600.0, 500.0, 400.0, 300.0] hPa.
  
 --> extrapolate=False
