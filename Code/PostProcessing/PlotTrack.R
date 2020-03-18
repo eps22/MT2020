@@ -63,8 +63,8 @@ PlotTrack <- function(folder, adjust, complete, connect, SLPexpandN=NULL, dthres
 
   foldername <- tail(strsplit(folder,'/')[[1]],1)
   
-  xticksinterval <- round((maxlon-minlon)/10,0)
-  yticksinterval <- round((maxlat-minlat)/10,0)
+  xticksinterval <- round((maxlon-minlon)/5,0)
+  yticksinterval <- round((maxlat-minlat)/5,0)
   
   cairo_pdf(filename = paste(folder,'/',foldername,'-trackplot.pdf',sep=''), width = 10, height = 8)
   MatrixPlot(zeromatrix, lon, lat, crs=crs, xmin = minlon, xmax = maxlon, ymin = minlat, ymax = maxlat,
