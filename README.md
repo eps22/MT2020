@@ -26,24 +26,23 @@ Output of this tool is a list object of R -*.RData*- with the found centers.
 
 System requirementes:
 
-**Python version**: Python 3.6.8 (a correct working of pinterpy interpolation with previous python versions is expected but not guaranteed).
-**Python requested libraries**:
-   netCDF4
-   wrf -> https://wrf-python.readthedocs.io/en/latest/ 
-   ast
-   numpy
-   xarray
+**Python version**: Python 3.6.8 (a correct working of pinterpy interpolation with previous python versions is expected but not guaranteed). <br>
+**Python requested libraries**: <br>
+   netCDF4 <br>
+   wrf -> https://wrf-python.readthedocs.io/en/latest/ <br>
+   ast <br>
+   numpy <br>
+   xarray <br>
 
-**R version**: R 3.6.1 (a correct installation of requested packages in previous R versions is not guaranteed).
-**R requested packages**:
-   ncdf4
-   oce
-     > install.packages('oce', dependencies=TRUE, repos='http://cran.rstudio.com/')
-       or
-     > install_github('dankelley/oce', ref='develop')
-   
-   foreach
-   doParallel
+**R version**: R 3.6.1 (a correct installation of requested packages in previous R versions is not guaranteed). <br>
+**R requested packages**: <br>
+   ncdf4 <br>
+   oce <br>
+     > install.packages('oce', dependencies=TRUE, repos='http://cran.rstudio.com/') <br>
+       or <br>
+     > install_github('dankelley/oce', ref='develop') <br>
+   foreach <br>
+   doParallel <br>
 
 
 ### PART II: TRACK POSTPROCESSING.
@@ -53,7 +52,6 @@ There are two postprocessing tools provided in this package, one for producing a
 #### Plot of calculated track
 
 To plot the calculated track -SEE PART I-, you should go to the *Code* folder and introduce the following command in the console:
-
 
 ```console
 user@machine:dir$ bash plotmedicanestrack.sh PATHTOFOLDER ADJUST COMPLETE CONNECT SLPEXPANDN DTHRESHOLD DTTHRESHOLD
