@@ -34,5 +34,3 @@ mv track.RData outfolder
 abc="completed$(ls -d completed* | wc -l)"
 mv outfolder $abc
 mv $abc/track.RData $abc/$abc-track.RData
-
-
