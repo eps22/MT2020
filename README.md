@@ -3,7 +3,8 @@ developed in the MAR group of the University of Murcia in 2019. <br>
 <br>
 Authors: Enrique Pravia-Sarabia, Juan Pedro Montávez, Juan José Gómez-Navarro and Pedro Jiménez-Guerrero. <br>
 <br>
-Release date: January 2020.** <br>
+Release date: December 2019. <br>
+Last updated: March 2020.** <br>
 
 ### PART I: TRACKING ALGORITHM
 
