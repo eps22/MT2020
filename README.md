@@ -18,7 +18,11 @@ user@machine:dir$ bash findmedicanes.sh PATHTOWRFOUTPUTNCFILE NCORES
 
 Algorithm parameters can be changed in the *FindMedicanes.namelist* file inside the TrackingAlgorithm folder. This file must be in this exact location when running the findmedicanes bash script. The *FindMedicanes.namelist.README* file contains detailed information about the meaning of each parameter, its possible values and its recommended/default value. 
 
+Note: In case of executing the algorithm over data from a source different from WRF, the input to the algorithm must be a folder named 'outfolder', with an 'output' folder on it. Inside the 'output' folder there must exist four files called 'outputfile-slp.nc', 'outputfile-z.nc', 'outputfile-uvmet10-U.nc' and 'outputfile-uvmet10-V.nc', containing SLP, geopotential height in pressure levels, and 10-m wind U and V components. The variables and dimensions names, as well as the spatial and temporal resolutions, need to be accordingly set in the TrackingAlgorithm/FindMedicanes.namelist file. Although the folder is named 'outfolder, the algorithm must be run with the command 'bash findmedicanes.sh OUTNAME NCORES', where **OUTNAME** will be the name given to the folder once the algorithm has terminated its execution.
+
 Output of this tool is a list object of R -*.RData*- with the found centers. 
+
+System requirementes:
 
 **Python version**: Python 3.6.8 (a correct working of pinterpy interpolation with previous python versions is expected but not guaranteed).
 **Python requested libraries**:
