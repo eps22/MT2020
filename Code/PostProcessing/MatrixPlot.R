@@ -160,25 +160,10 @@ MatrixPlot <- function(field, lon, lat, crs, resolution = NULL, dthreshold = NUL
     
     # Determine ratio between x and y dimensions
     ratio <- (e@xmax - e@xmin)/(e@ymax - e@ymin)
-    r <- raster(nrows=180, ncols=floor(180*ratio) , ext=extent(spdf)) #MODIFICAR PARA QUE SEA AUTOMATICO
+    r <- raster(nrows=180, ncols=floor(180*ratio) , ext=extent(spdf)) 
     rf <- rasterize(spdf, r, field="z", fun=mean)
     rdf <- data.frame(rasterToPoints(rf))    
     
-    #bounding box polygon in long/lat projection, i.e. axis-aligned
-    # bb <- st_sfc(
-    #   st_polygon(list(cbind(
-    #     c(xmin, xmax, xmax, xmin, xmin), # x-coordinates (longitudes) of points A,B,C,D
-    #     c(ymin, ymin, ymax, ymax, ymin)   # y-coordinates (latitudes) of points A,B,C,D
-    #   ))),
-    #   crs = crsLONGLAT)
-    # 
-    # # now in LAEA projection
-    # laeabb <- st_transform(bb, crs = crsLAEA)
-    # 
-    # # the extent of the bounding box in the new projection
-    # b <- st_bbox(laeabb)
-    
-    #A more precise but slower way of calculating the bounding box
     if(xmin!=min(lon) | xmax!=max(lon) | ymin!=min(lat) | ymax!=max(lat)){ 
       dfbounds <- data.frame(Lon = c(lon), Lat = c(lat), FLD = c(field))
       dfbounds <- dfbounds[dfbounds$Lon>=xmin & dfbounds$Lon<=xmax & dfbounds$Lat>=ymin & dfbounds$Lat<=ymax, ]
@@ -281,7 +266,6 @@ MatrixPlot <- function(field, lon, lat, crs, resolution = NULL, dthreshold = NUL
         geom_raster(data = rdf, aes(x = x, y = y, fill = layer), show.legend=legend) +
         geom_sf(fill='transparent', col='black') +
         coord_sf(crs = crsLAEA ,xlim = c(min(rdfbounds$x), max(rdfbounds$x)), ylim = c(min(rdfbounds$y), max(rdfbounds$y)), expand = TRUE))
-    #coord_sf(crs = crsLAEA ,xlim = c(b["xmin"], b["xmax"]), ylim = c(b["ymin"], b["ymax"]), expand = TRUE))
   }
   
   if(contours==TRUE){
