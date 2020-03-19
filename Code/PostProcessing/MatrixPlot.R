@@ -208,7 +208,9 @@ MatrixPlot <- function(field, lon, lat, crs, resolution = NULL, dthreshold = NUL
         
         # Determine ratio between x and y dimensions
         ratio_contours <- (e_contours@xmax - e_contours@xmin)/(e_contours@ymax - e_contours@ymin)
-        r_contours <- raster(nrows=120, ncols=floor(120*ratio_contours) , ext=extent(spdf_contours))
+        dim1contours <- 0.9*(dim(contours_field)[2])
+        dim2contours <- floor(dim1contours*ratio_contours)
+        r_contours <- raster(nrows=dim1contours, ncols=dim2contours , ext=extent(spdf_contours))
         rf_contours <- rasterize(spdf_contours, r_contours, field="z", fun=mean)
         rdf_contours <- data.frame(rasterToPoints(rf_contours))    
       }
