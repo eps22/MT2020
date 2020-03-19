@@ -178,7 +178,7 @@ MatrixPlot <- function(field, lon, lat, crs, resolution = NULL, dthreshold = NUL
       
       # Determine ratio between x and y dimensions
       ratiobounds <- (ebounds@xmax - ebounds@xmin)/(ebounds@ymax - ebounds@ymin)
-      rbounds <- raster(nrows=180, ncols=floor(180*ratio) , ext=extent(spdfbounds)) 
+      rbounds <- raster(nrows=dim1, ncols=dim2 , ext=extent(spdfbounds)) 
       rfbounds <- rasterize(spdfbounds, rbounds, field="z", fun=mean)
       rdfbounds <- data.frame(rasterToPoints(rfbounds))   
       
@@ -225,9 +225,7 @@ MatrixPlot <- function(field, lon, lat, crs, resolution = NULL, dthreshold = NUL
   #Adapt arrows data to projection
   if( !is.null(arrows_field_x) & !is.null(arrows_field_y)){ #check if vector field is requested to be plotted with arrows
     
-    #df_arrows_x <- data.frame(x = c(lon), y = c(lat), FLDx = c(arrows_field_x))
     df_arrows_x <- data.frame(Lon = c(lon), xidx = rep(1:nrow(lon),ncol(lon)), yidx=rep(1:ncol(lon),each=nrow(lon)), FLDx = c(arrows_field_x))
-    #df_arrows_y <- data.frame(x = c(lon), y = c(lat), FLDy = c(arrows_field_y))
     df_arrows_y <- data.frame(xidx = rep(1:nrow(lon),ncol(lon)), Lat = c(lat), yidx=rep(1:ncol(lon),each=nrow(lon)), FLDy = c(arrows_field_y))
     df4 <- merge(df_arrows_x, df_arrows_y, by=c('xidx','yidx'))
     #Remove the unnecessary columns with a previous row sumsampling
@@ -269,7 +267,6 @@ MatrixPlot <- function(field, lon, lat, crs, resolution = NULL, dthreshold = NUL
         geom_raster(data = rdf, aes(x = x, y = y, fill = layer), show.legend=legend) +
         geom_sf(fill='transparent', col='black') +
         coord_sf(crs = crsLAEA ,xlim = c(min(rdfbounds$x), max(rdfbounds$x)), ylim = c(min(rdfbounds$y), max(rdfbounds$y)), expand = TRUE))
-    #coord_sf(crs = crsLAEA ,xlim = c(b["xmin"], b["xmax"]), ylim = c(b["ymin"], b["ymax"]), expand = TRUE))
   }
   
   if(contours==TRUE){
