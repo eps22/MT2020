@@ -1,8 +1,12 @@
-plotfield.sh is a bash script prepared to make use of the PostProcessing/MatrixPlot.R function. It has been developed to allow an easy plotting of the WRF output fields contained in an netCDF file.
+plotfield.sh is a bash script prepared to make use of the PostProcessing/MatrixPlot.R function. 
+It has been developed to allow an easy plotting of the WRF output fields contained in an netCDF file.
 
 
 USAGE EXAMPLE: 
-q@wave:~$ bash plotfield.sh 'file=~/Desktop/Rolf/output/outputfile-slp.nc field=slp vlevel=3 timestep=40 xmin=-1 xmax=14 ymin=36 ymax=42 xticksint=4 yticksint=4 colorpalette=Spectral revcolpal=FALSE barlims=c(990,1010) barbreaks=seq(990,1010,by=5) barlabs=seq(990,1010,by=5) outname=slp-vlevel3-t40.pdf'
+q@wave:~$ bash plotfield.sh 'file=~/Desktop/Rolf/output/outputfile-slp.nc field=slp vlevel=3 timestep=40 
+                             xmin=-1 xmax=14 ymin=36 ymax=42 xticksint=4 yticksint=4 colorpalette=Spectral 
+                             revcolpal=FALSE barlims=c(990,1010) barbreaks=seq(990,1010,by=5) barlabs=seq(990,1010,by=5) 
+                             outname=slp-vlevel3-t40.pdf'
 
 This example includes all the flags supported so far. 
 
@@ -11,16 +15,23 @@ file: absolute path to a netCDF including the variable to plot.
 field: name of the variable to plot. Must be an existing variable in the netCDF specified in the file flag.
 
 CONDITIONALLY REQUIRED FLAGS:
-vlevel: vertical level. For in-levels variables, will throw an error if not specified. No default value.
-timestep: position of the timestamp to plot. For files with more than one timestamp, will throw an error if not specified. No default value. 
+vlevel:  vertical level. For in-levels variables, will throw an error if not specified. No default value.
+timestep: position of the timestamp to plot. For files with more than one timestamp, will throw an error if not specified. 
+          No default value. 
 
 OPTIONAL FLAGS:
-xmin: longitudinal western limit to crop plot (a number in deg from -180 to 180). Map western limit is automatically calculated if not specified.
-xmax: longitudinal eastern limit to crop plot (a number in deg from -180 to 180). Map eastern limit is automatically calculated if not specified.
-xmin: latitudinal southern limit to crop plot (a number in deg from -90 to 90). Map southern limit is automatically calculated if not specified.
-xmax: latitudinal northern limit to crop plot (a number in deg from -90 to 90). Map northern limit is automatically calculated if not specified.
-xticksint: interval between longitude ticks in the x-axis labels (a number in longitude degs). This interval is automatically calculated if not specified.
-yticksint: interval between latitude ticks in the y-axis labels (a numberin latitude degs). This interval is automatically calculated if not specified.
+xmin: longitudinal western limit to crop plot (a number in deg from -180 to 180). 
+      Map western limit is automatically calculated if not specified.
+xmax: longitudinal eastern limit to crop plot (a number in deg from -180 to 180). 
+      Map eastern limit is automatically calculated if not specified.
+xmin: latitudinal southern limit to crop plot (a number in deg from -90 to 90). 
+      Map southern limit is automatically calculated if not specified.
+xmax: latitudinal northern limit to crop plot (a number in deg from -90 to 90). 
+      Map northern limit is automatically calculated if not specified.
+xticksint: interval between longitude ticks in the x-axis labels (a number in longitude degs). 
+           This interval is automatically calculated if not specified.
+yticksint: interval between latitude ticks in the y-axis labels (a numberin latitude degs). 
+           This interval is automatically calculated if not specified.
 colorpalette: the name of palette supported in RColorBrewer. If not specified, the 'RdBu' palette is used.
 revcolpal: if color palette must be reversed (logical TRUE/FALSE).
 barlims: a 2 positions numeric vector with lower and upper limits for the color bar.
@@ -29,9 +40,12 @@ barlabs: a character vector with the labels for the color bar. Its length must c
 outname=a name for the output pdf. If not specified, defaults to 'plotfield-outmap.pdf'.
 
 
-Note: the directories structure must be preserved. Both files plotfield.sh and plotfield.R must be located inside a 'tools' folder, located in the same directory as the 'PostProcessing' folder.
+Note: the directories structure must be preserved. Both files plotfield.sh and plotfield.R must be located inside 
+      a 'tools' folder, located in the same directory as the 'PostProcessing' folder.
 
-Note: only Lambert and LongLat projections are supported. If the input netCDF file has a different projection, it will be plotted in LONGLAT. This feature will soon be extended to support different projections.
+Note: only Lambert and LongLat projections are supported. If the input netCDF file has a different projection, 
+      it will be plotted in LONGLAT. This feature will soon be extended to support different projections.
 
-Note: although MatrixPlot.R allows the plotting of dots, contour lines and arrows for vectorial fields, the bash script plotfield.sh does not support these features yet.
+Note: although MatrixPlot.R allows the plotting of dots, contour lines and arrows for vectorial fields, the bash
+      script plotfield.sh does not support these features yet.
 
