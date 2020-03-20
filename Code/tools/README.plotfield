@@ -3,9 +3,9 @@ It has been developed to allow an easy plotting of the WRF output fields contain
 
 
 USAGE EXAMPLE: 
-user@machine:~$ bash plotfield.sh 'file=~/Desktop/Rolf/output/outputfile-slp.nc field=slp vlevel=3 timestep=40 
-                             xmin=-1 xmax=14 ymin=36 ymax=42 xticksint=4 yticksint=4 colorpalette=Spectral 
-                             revcolpal=FALSE barlims=c(990,1010) barbreaks=seq(990,1010,by=5) barlabs=seq(990,1010,by=5) 
+user@machine:~$ bash plotfield.sh 'file=~/Desktop/Rolf/output/outputfile-z.nc field=height vlevel=3 timestep=40 
+                             xmin=-1 xmax=14 ymin=36 ymax=42 xticksint=4 yticksint=4 colorpalette=Spectral revcolpal=TRUE 
+                             barlims=c(3200,3300) barbreaks=seq(3200,3300,by=20) barlabs=seq(3200,3300,by=20) 
                              outname=slp-vlevel3-t40.pdf'
 
 This example includes all the flags supported so far. 
