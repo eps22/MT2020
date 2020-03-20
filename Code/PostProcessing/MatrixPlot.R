@@ -11,21 +11,21 @@ MatrixPlot <- function(field, lon, lat, crs, resolution = NULL, dthreshold = NUL
                           dots3 = NULL, dots3_symbol = NULL, dots3_cex = NULL, dots3_color = NULL, dots3_connect = NULL, dots3_connect_color = NULL,
                           arrows_field_x = NULL, arrows_field_y = NULL, arrows_alpha = NULL, arrows_pixels_subsampling = NULL, arrows_length_factor = NULL){
   
-  suppressMessages(library(rnaturalearth))
-  suppressMessages(library(RColorBrewer))
-  suppressMessages(library(sf))
-  suppressMessages(library(akima))
-  suppressMessages(library(reshape2))
-  suppressMessages(library(ggplot2))
-  suppressMessages(library(ggspatial))
-  suppressMessages(library(maptools))
-  suppressMessages(library(rgeos))
-  suppressMessages(library(rgdal))
-  suppressMessages(library(sp)) 
-  suppressMessages(library(raster)) 
-  suppressMessages(library(latticeExtra))
-  suppressMessages(library(metR))
-  suppressMessages(library(scales))
+  suppressWarnings(suppressMessages(library(rnaturalearth)))
+  suppressWarnings(suppressMessages(library(RColorBrewer)))
+  suppressWarnings(suppressMessages(library(sf)))
+  suppressWarnings(suppressMessages(library(akima)))
+  suppressWarnings(suppressMessages(library(reshape2)))
+  suppressWarnings(suppressMessages(library(ggplot2)))
+  suppressWarnings(suppressMessages(library(ggspatial)))
+  suppressWarnings(suppressMessages(library(maptools)))
+  suppressWarnings(suppressMessages(library(rgeos)))
+  suppressWarnings(suppressMessages(library(rgdal)))
+  suppressWarnings(suppressMessages(library(sp)))
+  suppressWarnings(suppressMessages(library(raster))) 
+  suppressWarnings(suppressMessages(library(latticeExtra)))
+  suppressWarnings(suppressMessages(library(metR)))
+  suppressWarnings(suppressMessages(library(scales)))
   
   dd <- function(point1,point2){
     if(is.null(nrow(point1)) && length(point1)==2){
