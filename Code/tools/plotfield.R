@@ -216,10 +216,14 @@ if(sum(is.na(c(xmin,xmax,ymin,ymax)))>=1){
 
 if(!is.na(colorpalette)){
   cairo_pdf(filename = outname, width = horz, height = vert) 
-  MatrixPlot(inputfield,lon,lat,crs,xmin=xmin,xmax=xmax,ymin=ymin,ymax=ymax,x_ticks_interval=xticksint,y_ticks_interval=yticksint,bar_color_scale=palette,bar_lims=barlims,bar_breaks=barbreaks,bar_labels=barlabs)
+  MatrixPlot(inputfield,lon,lat,crs,xmin=xmin,xmax=xmax,ymin=ymin,ymax=ymax,
+             x_ticks_interval=xticksint,y_ticks_interval=yticksint,bar_color_scale=palette,
+             bar_lims=barlims,bar_breaks=barbreaks,bar_labels=barlabs)
   dev.off()
 } else{
   cairo_pdf(filename = outname, width = horz, height = vert)
-  MatrixPlot(inputfield,lon,lat,crs,xmin=xmin,xmax=xmax,ymin=ymin,ymax=ymax,x_ticks_interval=xticksint,y_ticks_interval=yticksint,bar_lims=barlims,bar_breaks=barbreaks,bar_labels=barlabs)
+  MatrixPlot(inputfield,lon,lat,crs,xmin=xmin,xmax=xmax,ymin=ymin,ymax=ymax,
+             x_ticks_interval=xticksint,y_ticks_interval=yticksint,
+             bar_lims=barlims,bar_breaks=barbreaks,bar_labels=barlabs)
   dev.off()
 }
