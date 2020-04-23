@@ -105,9 +105,9 @@
                                                              #mean domain value.
                                                              ####Defaults to 'zero'.
 
-  CalculateZeroVortRadiusNPoints        = 30                 #Number of points of the line along which vorticity sign change 
+  CalculateZeroVortRadiusDistance       = 300                #Length of the lines along which vorticity sign change 
                                                              #-if threshold is zero- or mean value -if threshold is mean- 
-                                                             #is searched. Determines the max size (N*resolution) of the 
+                                                             #is searched in 8 directions. Determines the max size of the 
                                                              #structures allowed in the domain, since if no critical point 
                                                              #(zero or mean vorticity) is found on any of the directions, the 
                                                              #point is discarded.
