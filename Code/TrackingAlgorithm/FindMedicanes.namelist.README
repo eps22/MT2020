@@ -32,7 +32,7 @@
                                                              ####and 'lat' for ERA5 and ERA5-interim reanalysis data.
 
   LatVarName                            = XLAT               #Name of the latitude variable in the netCDF.
-                                                             ####It takes the name 'west_east' for WRF-python output,
+                                                             ####It takes the name 'XLAT' for WRF-python output,
                                                              ####and 'lat' for ERA5 and ERA5-interim reanalysis data.
 
   TimeDimName                           = Time               #Name of the time dimension in the netCDF.
@@ -60,7 +60,7 @@
   ZVarName                              = height             #Name of the geopotential height variable in the outputfile-z.nc 
                                                              #netCDF.
                                                              ####It takes the name 'height' for WRF-python output,
-                                                             ####and 'var129' for ERA5 and ERA5-interim reanalysis data..
+                                                             ####and 'var129' for ERA5 and ERA5-interim reanalysis data.
 
   SmoothingPasses                       = 5                  #Number of passes of the 1-2-1 smoothing of the product field.
                                                              #This product is the result of a point-wise multiplication of
