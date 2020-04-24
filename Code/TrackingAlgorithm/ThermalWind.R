@@ -32,7 +32,7 @@ ThermalWind <- function(compfolder, currentimeidx, consecutivecenters, resolutio
       zVradiuskmMAX <- max(zVradiuskm)
       zVradiuskmMAXposition <- INradiuspoints[which(zVradiuskm==max(zVradiuskmMAX),arr.ind = TRUE),]
       if(length(zVradiuskmMAXposition)>2){zVradiuskmMAXposition <- zVradiuskmMAXposition[1,,drop=FALSE]}
-      maxmindistance <- abs(dd(zVradiuskmMAXposition, zVradiuskmMINposition))#*resolution
+      maxmindistance <- abs(dd(zVradiuskmMAXposition, zVradiuskmMINposition))*(resolution*1000)
       plevdeltaZ <- (zVradiuskmMAX - zVradiuskmMIN)/maxmindistance
       
       deltaZlow <- c(deltaZlow,plevdeltaZ)
@@ -71,7 +71,7 @@ ThermalWind <- function(compfolder, currentimeidx, consecutivecenters, resolutio
       zVradiuskmMAX <- max(zVradiuskm)
       zVradiuskmMAXposition <- INradiuspoints[which(zVradiuskm==max(zVradiuskmMAX),arr.ind = TRUE),]
       if(length(zVradiuskmMAXposition)>2){zVradiuskmMAXposition <- zVradiuskmMAXposition[1,,drop=FALSE]}
-      maxmindistance <- abs(dd(zVradiuskmMAXposition, zVradiuskmMINposition))#*resolution
+      maxmindistance <- abs(dd(zVradiuskmMAXposition, zVradiuskmMINposition))*(resolution*1000)
       plevdeltaZ <- (zVradiuskmMAX - zVradiuskmMIN)/maxmindistance
       
       deltaZhigh <- c(deltaZhigh,plevdeltaZ)
