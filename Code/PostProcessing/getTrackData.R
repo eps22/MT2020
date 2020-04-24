@@ -160,8 +160,8 @@ getTrackData <- function(folder, complete=NULL, save=NULL){
       im <- isMedicane(compfolder=folder, center=point, currentimeidx=timestamp, timestep=TimestepDt, resolution=Resolution, HartConditionsTocheck=HartConditionsTocheck, Blowerpressurelevel=Blowerpressurelevel, Bupperpressurelevel=Bupperpressurelevel, Bmultiplemeasure=Bmultiplemeasure, Bdirections=Bdirections, Bthreshold=Bthreshold, LTWlowerpressurelevel=LTWlowerpressurelevel, LTWupperpressurelevel=LTWupperpressurelevel, UTWlowerpressurelevel=UTWlowerpressurelevel, UTWupperpressurelevel=UTWupperpressurelevel, zerovortradius, PressureVertLevelDimName, SLPVarName, ZVarName)
       
       bs <- c(bs, round(as.numeric(im$triad[1]),1))
-      vtls <- c(vtls, round(as.numeric(im$triad[2]),1))
-      vtus <- c(vtus, round(as.numeric(im$triad[3]),1))
+      vtls <- c(vtls, round(as.numeric(im$triad[2]),8))
+      vtus <- c(vtus, round(as.numeric(im$triad[3]),8))
 
       uv10MODINradiuspoints <- uv10MODt[INradiuspoints]
       maxINradiuswinds <- c(maxINradiuswinds, round(max(uv10MODINradiuspoints),2)) 
