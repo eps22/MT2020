@@ -107,9 +107,9 @@ ParallelFindCenters <- function(compfolder, currentimeidx, TimestepDt, Resolutio
     for(centeridx in 1:length(centercandidateslist)){
       candidategroup <- cclistcp[as.numeric(which(sapply(cclistcp,function(x){dd(x,centercandidateslist[[centeridx]])*Resolution})<SLPminsClustersMinIBdistance))]
       print(centeridx)
-      print(length(candidategroup))
-      #sortedbySLPcandidategroup <- candidategroup[names(sort(unlist(lapply(candidategroup, function(x){slpT[x[1],x[2]]}))))]
-      #candidategroup <- sortedbySLPcandidategroup
+      #print(length(candidategroup))
+      sortedbySLPcandidategroup <- candidategroup[names(sort(unlist(lapply(candidategroup, function(x){slpT[x[1],x[2]]}))))]
+      candidategroup <- sortedbySLPcandidategroup
       
       if(length(candidategroup)>MinPointsNumberInCluster){
         if(IfCheckHartParamsConditions==TRUE){
