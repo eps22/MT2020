@@ -56,7 +56,7 @@ There are two postprocessing tools provided in this package, one for producing a
 
 #### Plot of calculated track
 
-To plot the calculated track -SEE PART I-, you should go to the *Code* folder and introduce the following command in the console:
+To plot the calculated track -IN PART I-, you should go to the *Code* folder and introduce the following command in the console:
 
 ```console
 user@machine:dir$ bash plotmedicanestrack.sh PATHTOFOLDER ADJUST COMPLETE CONNECT SLPEXPANDN DTHRESHOLD DTTHRESHOLD
