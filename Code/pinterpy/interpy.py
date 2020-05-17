@@ -350,7 +350,7 @@ def interpy():
                         plevelsinterpolatedfieldV = interpvar.isel(u_v=1)
                         plevelsinterpolatedfieldMOD = np.sqrt(plevelsinterpolatedfieldU*plevelsinterpolatedfieldU + plevelsinterpolatedfieldV*plevelsinterpolatedfieldV)
                 if interpoption==True:
-                    print('Warning: interpolation is not an appliable method for single-level fields, and hence it will not be performed.')
+                    print('Warning: interpolation is not an applicable method for single-level fields, and hence it will not be performed.')
             if ('bottom_top' in interpvar.dims) == True:
                 if interpoption==True:
                     print('Interpolating ', interpfield,' to ', len(plevels), ' pressure levels ...')
@@ -434,7 +434,7 @@ def interpy():
                         plevelsinterpolatedfieldMOD = np.sqrt(plevelsinterpolatedfieldU*plevelsinterpolatedfieldU + plevelsinterpolatedfieldV*plevelsinterpolatedfieldV)
                     if interpoption==True:
                         if timestamp == 0:
-                            print('Warning: interpolation is not an appliable method for single-level fields, and hence it will not be performed.')
+                            print('Warning: interpolation is not an applicable method for single-level fields, and hence it will not be performed.')
                 if ('bottom_top' in interpvar.dims) == True:
                     if interpoption==False:
                         plevelsinterpolatedfield = interpvar
