@@ -29,6 +29,7 @@ fi
 Rscript TrackingAlgorithm/RUN.R $localdir/outfolder ${@:2}
 
 mv outfolder-track.RData track.RData
+cp TrackingAlgorithm/FindMedicanes.namelist $localdir/outfolder
 echo "PWD: "$localdir/$'   \n'"INPUTDIR: ""$PASSED" >> outfolder/inputinfo
 mv track.RData outfolder
 abc="completed$(ls -d completed* | wc -l)"
